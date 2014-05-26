@@ -26,6 +26,13 @@ type Test() =
         let goal2 = Lambda ("new-var", (Application (Variable "y", Lambda ("x", Constant Succ))))
         Assert.AreEqual (sub2, goal2)
 
+    [<Test>]
+    member x.TestBetaConversion() =
+        let term1 = Application (Lambda ("x", Variable "x"), Constant (Num 5))
+        let conv1 = betaConversion term1
+        let goal1 = Constant (Num 5)
+        Assert.AreEqual (conv1, goal1)
+
 
 
     [<Test>]

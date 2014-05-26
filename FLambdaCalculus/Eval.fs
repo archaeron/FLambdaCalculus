@@ -66,7 +66,9 @@ let alphaConversion term =
 
 // insert parameters
 let betaConversion term =
-    term
+    match term with
+    | Application (Lambda(x, a), b) -> substitution a x b
+    | _ -> term
 
 let etaConversion term =
     match term with
