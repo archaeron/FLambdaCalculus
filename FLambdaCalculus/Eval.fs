@@ -61,14 +61,32 @@ let rec substitution term1 var term2 =
 
 
 // 
-let alphaReduction term
+let alphaConversion term =
+    term
 
 // insert parameters
-let betaReduction term
+let betaConversion term =
+    term
 
-let etaReduction term
+let etaConversion term =
+    match term with
+    | Lambda (x, Application (t, Variable x2)) when x2 = x ->
+        match t with
+        | Constant (Num _) -> term
+        | _ ->
+            if not (isFreeVariableOf x t)
+            then
+                t
+            else
+                term
+    | _ -> term
 
-let deltaReduction term
+
+let deltaConversion term =
+    match term with
+    | Application (Constant Succ, Constant (Num n)) -> Constant (Num (n + 1))
+    | Application (Application (Constant Add, Constant (Num n)), Constant (Num m)) -> Constant (Num (n + m))
+    | _ -> term
 
 
 // Tests
