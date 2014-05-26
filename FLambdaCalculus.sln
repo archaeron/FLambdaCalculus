@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{4925A630-B079-445d-BCD4-3A9C94FE9307}") = "FLambdaCalculus", "FLambdaCalculus\FLambdaCalculus.fsproj", "{592D9B6B-A47A-48D5-BC57-977D0F853733}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{592D9B6B-A47A-48D5-BC57-977D0F853733}.Debug|x86.ActiveCfg = Debug|x86
+		{592D9B6B-A47A-48D5-BC57-977D0F853733}.Debug|x86.Build.0 = Debug|x86
+		{592D9B6B-A47A-48D5-BC57-977D0F853733}.Release|x86.ActiveCfg = Release|x86
+		{592D9B6B-A47A-48D5-BC57-977D0F853733}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = FLambdaCalculus\FLambdaCalculus.fsproj
+	EndGlobalSection
+EndGlobal
