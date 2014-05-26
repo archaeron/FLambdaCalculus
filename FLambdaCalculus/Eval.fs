@@ -38,6 +38,14 @@ let isFreeVariableOf var = freeVariables >> List.exists (fun a -> a = var)
 
 
 let newVar term =
+    let rec newVar' term nVar =
+        if isFreeVariableOf nVar term
+        then
+            newVar' term (nVar+"1")
+        else
+            nVar
+        
+    newVar' term "new-var"
 
 let rec substitution term1 var term2 =
     match term1 with
