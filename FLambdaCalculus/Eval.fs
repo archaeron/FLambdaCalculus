@@ -2,9 +2,6 @@
 module Lambda.Eval
 open System
 
-// Learn more about F# at http://fsharp.net
-// See the 'F# Tutorial' project for more help.
-
 type Const =
     | Num of int
     | Add
