@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{4925A630-B079-445d-BCD4-3A9C94FE9307}") = "FLambdaCalculus", "FLambdaCalculus\FLambdaCalculus.fsproj", "{592D9B6B-A47A-48D5-BC57-977D0F853733}"
 EndProject
+Project("{4925A630-B079-445d-BCD4-3A9C94FE9307}") = "Tests", "Tests\Tests.fsproj", "{6E45D1A0-B7AE-426D-8050-B86633DE11FB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -13,6 +15,10 @@ Global
 		{592D9B6B-A47A-48D5-BC57-977D0F853733}.Debug|x86.Build.0 = Debug|x86
 		{592D9B6B-A47A-48D5-BC57-977D0F853733}.Release|x86.ActiveCfg = Release|x86
 		{592D9B6B-A47A-48D5-BC57-977D0F853733}.Release|x86.Build.0 = Release|x86
+		{6E45D1A0-B7AE-426D-8050-B86633DE11FB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6E45D1A0-B7AE-426D-8050-B86633DE11FB}.Debug|x86.Build.0 = Debug|Any CPU
+		{6E45D1A0-B7AE-426D-8050-B86633DE11FB}.Release|x86.ActiveCfg = Release|Any CPU
+		{6E45D1A0-B7AE-426D-8050-B86633DE11FB}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = FLambdaCalculus\FLambdaCalculus.fsproj

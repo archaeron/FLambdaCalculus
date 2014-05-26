@@ -42,4 +42,10 @@
     <Compile Include="Test.fs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.1\Framework\v4.0\Microsoft.FSharp.Targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\FLambdaCalculus\FLambdaCalculus.fsproj">
+      <Project>{592D9B6B-A47A-48D5-BC57-977D0F853733}</Project>
+      <Name>FLambdaCalculus</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>
