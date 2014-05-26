@@ -87,15 +87,3 @@ let deltaConversion term =
     | Application (Constant Succ, Constant (Num n)) -> Constant (Num (n + 1))
     | Application (Application (Constant Add, Constant (Num n)), Constant (Num m)) -> Constant (Num (n + m))
     | _ -> term
-
-
-// Tests
-let currying = fun f -> fun x -> fun y -> (f (x, y))
-
-let g (x, y) = x * y 
-let curringTest = currying g 4 5 
-
-let uncurrying = fun f -> fun x -> f (fst x) (snd x)
-let uncurryingTest = uncurrying (*) (4,5)
-
-let testFree = Application (Variable "y", Lambda ("x", Constant Succ))
