@@ -54,8 +54,9 @@ let rec substitution term1 var term2 =
     | Lambda (x, t) when x <> var && not (isFreeVariableOf x term2) -> Lambda (x, substitution t var term2)
     | Lambda (x, t) when x <> var ->
         let z = newVar (Application (t, term2))
-        // todo
-        Lambda (z, substitution (substitution())) //todo
+        let subst1 = substitution t x (Variable z)
+        let subst2 = substitution subst1 var term2
+        Lambda (z, subst2) //todo
     | _ -> term1
 
 
