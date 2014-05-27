@@ -86,3 +86,6 @@ let deltaConversion term =
     | Application (Constant Succ, Constant (Num n)) -> Constant (Num (n + 1))
     | Application (Application (Constant Add, Constant (Num n)), Constant (Num m)) -> Constant (Num (n + m))
     | _ -> term
+
+// helper functions
+let number = Constant << Num
