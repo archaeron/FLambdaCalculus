@@ -4,7 +4,7 @@ open NUnit.Framework
 open Lambda.Eval
 
 [<TestFixture>]
-type Test() = 
+type Test() =
 
     [<Test>]
     member x.TestFreeVariables() =
@@ -33,6 +33,22 @@ type Test() =
         let goal1 = Constant (Num 5)
         Assert.AreEqual (conv1, goal1)
 
+        let term2 = Application (Lambda ("z", Application (Variable "z", Variable "z")), Lambda ("w", Variable "w"))
+        let conv2 = betaConversion term2
+        let goal2 = Application (Lambda ("w", Variable "w"), Lambda ("w", Variable "w"))
+        Assert.AreEqual (conv2, goal2)
+
+        let term3 = Application (Lambda ("x", Variable "y"), Variable "z")
+        let conv3 = betaConversion term3
+        let goal3 = Variable "y"
+        Assert.AreEqual (conv3, goal3)
+
+        let term4_1 = Lambda ("x", Variable "y")
+        let term4_2 = Application (Lambda ("z", Application (Variable "z", Variable "z")), Lambda ("w", Variable "w"))
+        let term4 = Application (term4_1, term4_2)
+        let conv4 = betaConversion term4
+        let goal4 = Variable "y"
+        Assert.AreEqual (conv4, goal4)
 
 
     [<Test>]
