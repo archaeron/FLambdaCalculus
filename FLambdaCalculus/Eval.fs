@@ -36,7 +36,7 @@ let rec freeVariables =
 /// Checks if a variable is free in a term
 let isFreeVariableOf var = freeVariables >> List.exists (fun a -> a = var)
 
-
+/// Create a new variable name, that is not free in a term 
 let newVar term =
     let rec newVar' term nVar =
         if isFreeVariableOf nVar term
@@ -47,6 +47,7 @@ let newVar term =
         
     newVar' term "new-var"
 
+/// substitute a variable in a term with another term
 let rec substitution term1 var term2 =
     match term1 with
     | Variable x when x = var -> term2
@@ -64,7 +65,7 @@ let rec substitution term1 var term2 =
 let alphaConversion term =
     term
 
-// insert parameters
+/// apply parameters to a function
 let betaConversion term =
     match term with
     | Application (Lambda(x, a), b) -> substitution a x b
@@ -83,7 +84,7 @@ let etaConversion term =
                 term
     | _ -> term
 
-
+/// give the constants some meaning
 let deltaConversion term =
     match term with
     | Application (Constant Succ, Constant (Num n)) -> Constant (Num (n + 1))
