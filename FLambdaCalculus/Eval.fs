@@ -61,10 +61,6 @@ let rec substitution term1 var term2 =
     | _ -> term1
 
 
-// 
-let alphaConversion term =
-    term
-
 /// apply parameters to a function
 let betaConversion term =
     match term with
